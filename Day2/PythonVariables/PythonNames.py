@@ -12,3 +12,12 @@ _my_var = "John"
 myVar = "John"
 MYVAR = "John"
 myvar2 = "John"
+
+# Multi Words Variable Names
+# Camel Case
+myVariableName = "Long"
+# Pascal Case
+MyVariableName = "Long"
+# Snake Case
+my_variable_name = "Long"
+
