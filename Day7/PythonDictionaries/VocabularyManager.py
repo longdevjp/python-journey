@@ -1,13 +1,33 @@
+from colorama import init, Fore, Back, Style
+import os
+import time
+
+# Khởi tạo colorama
+init()
+
+def clear_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+def print_header(text):
+    width = 50
+    print(Fore.CYAN + "╔" + "═" * (width-2) + "╗")
+    print("║" + text.center(width-2) + "║")
+    print("╚" + "═" * (width-2) + "╝" + Style.RESET_ALL)
+
 def print_menu():
-    print("\n=== TỪ ĐIỂN ANH - VIỆT ===")
-    print("1. Thêm từ mới")
-    print("2. Tìm nghĩa của từ")
-    print("3. Cập nhật nghĩa")
-    print("4. Xóa từ")
-    print("5. Hiển thị tất cả từ")
-    print("6. Kiểm tra từ")
-    print("7. Thoát")
-    print("========================")
+    clear_screen()
+    print_header(" TỪ ĐIỂN ANH - VIỆT ")
+    print(Fore.YELLOW + "\n┌─── MENU CHỨC NĂNG ───┐")
+    print("│                      │")
+    print(f"│  {Fore.GREEN}1.{Fore.WHITE} Thêm từ mới       {Fore.YELLOW}│")
+    print(f"│  {Fore.GREEN}2.{Fore.WHITE} Tìm nghĩa của từ  {Fore.YELLOW}│")
+    print(f"│  {Fore.GREEN}3.{Fore.WHITE} Cập nhật nghĩa    {Fore.YELLOW}│")
+    print(f"│  {Fore.GREEN}4.{Fore.WHITE} Xóa từ            {Fore.YELLOW}│")
+    print(f"│  {Fore.GREEN}5.{Fore.WHITE} Hiển thị từ điển  {Fore.YELLOW}│")
+    print(f"│  {Fore.GREEN}6.{Fore.WHITE} Kiểm tra từ       {Fore.YELLOW}│")
+    print(f"│  {Fore.GREEN}7.{Fore.WHITE} Thoát             {Fore.YELLOW}│")
+    print("│                      │")
+    print("└──────────────────────┘" + Style.RESET_ALL)
 
 def add_word(dictionary):
     word = input("Nhập từ tiếng Anh: ").lower()
